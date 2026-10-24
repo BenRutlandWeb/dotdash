@@ -1,0 +1,17 @@
+/* Breadcrumb */
+[is="breadcrumb"] {
+  & ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  & li {
+    display: contents;
+
+    &:not(:first-child)::before {
+      content: "chevron_forward" / "";
+    }
+  }
+}

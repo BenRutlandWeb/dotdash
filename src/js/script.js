@@ -78,3 +78,11 @@ document.querySelectorAll('[command="--clear-input"]').forEach((invoker) => {
     setInvokerState(!target.value),
   );
 });
+
+App.registerCommand("--step-down", ({ target }) => {
+  target.stepDown();
+});
+
+App.registerCommand("--step-up", ({ target }) => {
+  target.stepUp();
+});
