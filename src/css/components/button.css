@@ -1,0 +1,9 @@
+/* Button */
+button:not([is], [role="switch"]) {
+  background-color: ButtonFace;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  place-items: center;
+  justify-content: center;
+}

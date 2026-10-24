@@ -1,0 +1,14 @@
+/* Switch */
+button[role="switch"][aria-checked] {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &[aria-checked="false"]::before {
+    content: "toggle_off" / "";
+  }
+  &[aria-checked="true"]::before {
+    --icon--fill: 1;
+    content: "toggle_on" / "";
+  }
+}

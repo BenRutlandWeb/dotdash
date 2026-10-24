@@ -1,0 +1,10 @@
+/* Toggle */
+button[aria-pressed] {
+  &[aria-pressed="false"]::before {
+    content: attr(icon) / "";
+  }
+  &[aria-pressed="true"]::before {
+    --icon--fill: 1;
+    content: attr(icon\:pressed, attr(icon)) / "";
+  }
+}

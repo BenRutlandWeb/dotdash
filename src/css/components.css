@@ -1,1 +1,9 @@
 @import "./components/avatar.css";
+@import "./components/button.css";
+@import "./components/checkbox.css";
+@import "./components/icon-button.css";
+@import "./components/icon.css";
+@import "./components/radio.css";
+@import "./components/select.css";
+@import "./components/switch.css";
+@import "./components/toggle.css";

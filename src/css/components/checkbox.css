@@ -1,0 +1,13 @@
+/* Checkbox */
+input[type="checkbox"] {
+  --icon--content: "check_box_outline_blank" / "";
+  appearance: none;
+
+  &:checked {
+    --icon--content: "check_box" / "";
+  }
+
+  &:indeterminate {
+    --icon--content: "indeterminate_check_box" / "";
+  }
+}

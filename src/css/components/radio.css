@@ -1,0 +1,9 @@
+/* Radio */
+input[type="radio"] {
+  --icon--content: "radio_button_unchecked" / "";
+  appearance: none;
+
+  &:checked {
+    --icon--content: "radio_button_checked" / "";
+  }
+}

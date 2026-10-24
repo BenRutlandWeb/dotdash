@@ -15,6 +15,74 @@
     <icon name="person" is="avatar"></icon>
     <span is="avatar">BR</span>
 
+    <icon name="menu"></icon>
+
+    <button aria-pressed="false">
+      <icon name="save" pressed="refresh"></icon>
+      Save
+    </button>
+
+    <button is="icon-button" aria-pressed="false">
+      <icon name="save" pressed="refresh"></icon>
+    </button>
+
+    <section>
+      <h2>Checkbox</h2>
+      <div>
+        <input type="checkbox" name="checkbox" value="eggs" aria-label="Eggs" />
+        <input type="checkbox" name="checkbox" value="milk" aria-label="Milk" />
+        <input
+          type="checkbox"
+          name="checkbox"
+          value="butter"
+          aria-label="Butter"
+        />
+      </div>
+    </section>
+
+    <section>
+      <h2>Radio</h2>
+      <div>
+        <input type="radio" name="radio" value="eggs" aria-label="Eggs" />
+        <input type="radio" name="radio" value="milk" aria-label="Milk" />
+        <input type="radio" name="radio" value="butter" aria-label="Butter" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Select</h2>
+      <div>
+        <select name="" id="select" required>
+          <option value="" disabled selected hidden>Select a fruit</option>
+          <option value="apple">Apple</option>
+          <option value="orange">Orange</option>
+          <option value="pear">Pear</option>
+          <option value="banana">Banana</option>
+          <option value="peach">Peach</option>
+          <option value="tangerine">Tangerine</option>
+          <option value="pineapple">Pineapple</option>
+          <option value="nectarine">Nectarine</option>
+          <option value="grapes">Grapes</option>
+          <option value="plum">Plum</option>
+          <option value="mango">Mango</option>
+          <option value="kiwi">Kiwi</option>
+          <option value="melon">Melon</option>
+          <option value="strawberries">Strawberries</option>
+        </select>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll("[aria-pressed]").forEach((button) => {
+        button.addEventListener("click", () => {
+          button.setAttribute(
+            "aria-pressed",
+            button.getAttribute("aria-pressed") === "true" ? "false" : "true",
+          );
+        });
+      });
+    </script>
+
     <script src="../src/js/script.js"></script>
   </body>
 </html>
