@@ -1,0 +1,43 @@
+/* Accordion */
+details {
+  width: 100%;
+
+  & summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    cursor: pointer;
+    background-color: ButtonFace;
+    color: ButtonText;
+    line-height: 1.5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+
+    &::marker {
+      content: "";
+    }
+
+    &::after {
+      content: "keyboard_arrow_down" / "";
+    }
+  }
+
+  &:open summary::after {
+    content: "keyboard_arrow_up";
+  }
+
+  &::details-content {
+    transition: all 0.35s allow-discrete;
+    padding: 0 0.5rem 0.25rem;
+  }
+
+  &:not(:open)::details-content {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &:open::details-content {
+  }
+}

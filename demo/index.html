@@ -12,6 +12,34 @@
   </head>
   <body>
     <section>
+      <h2>Accordion</h2>
+      <div>
+        <details name="accordion">
+          <summary>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </summary>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+            nulla! Porro ratione ipsam sapiente, provident maxime vitae cum modi
+            culpa incidunt ipsum expedita fugit consectetur quia, nobis
+            explicabo labore distinctio!
+          </p>
+        </details>
+        <details name="accordion">
+          <summary>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </summary>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            nihil blanditiis libero impedit consequuntur deserunt fugit
+            reiciendis earum rem? Voluptatem officia deserunt temporibus
+            suscipit velit voluptatibus nemo. Eveniet, nam assumenda.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section>
       <h2>Avatar</h2>
       <div>
         <img src="https://i.pravatar.cc/40?u=avatar" alt="" is="avatar" />
@@ -109,7 +137,12 @@
 
     <section>
       <h2>Switch</h2>
-      <div>...</div>
+      <div>
+        <button role="switch" aria-checked="false">
+          <icon name="toggle_off" checked="toggle_on"></icon>
+          Switch
+        </button>
+      </div>
     </section>
 
     <section>
@@ -126,11 +159,19 @@
     </section>
 
     <script>
-      document.querySelectorAll("[aria-pressed]").forEach((button) => {
-        button.addEventListener("click", () => {
-          button.setAttribute(
+      document.querySelectorAll("[aria-pressed]").forEach(($toggle) => {
+        $toggle.addEventListener("click", () => {
+          $toggle.setAttribute(
             "aria-pressed",
-            button.getAttribute("aria-pressed") === "true" ? "false" : "true",
+            $toggle.getAttribute("aria-pressed") === "true" ? "false" : "true",
+          );
+        });
+      });
+      document.querySelectorAll('[role="switch"]').forEach(($switch) => {
+        $switch.addEventListener("click", () => {
+          $switch.setAttribute(
+            "aria-checked",
+            $switch.getAttribute("aria-checked") === "true" ? "false" : "true",
           );
         });
       });

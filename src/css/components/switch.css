@@ -1,5 +1,5 @@
 /* Switch */
-button[role="switch"][aria-checked] {
+/*button[role="switch"][aria-checked] {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -10,5 +10,12 @@ button[role="switch"][aria-checked] {
   &[aria-checked="true"]::before {
     --icon--fill: 1;
     content: "toggle_on" / "";
+  }
+}*/
+
+button[role="switch"][aria-checked] {
+  &[aria-checked="true"] > icon {
+    --icon--name: attr(checked, attr(name));
+    --icon--fill: 1;
   }
 }

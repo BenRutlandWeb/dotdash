@@ -3,7 +3,8 @@ icon::before,
 input[type="checkbox"]::before,
 input[type="radio"]::before,
 select::picker-icon,
-option::checkmark {
+option::checkmark,
+summary::after {
   font: normal normal 1.5rem / 1 "Material Symbols Rounded";
   letter-spacing: normal;
   text-transform: none;
