@@ -1,10 +1,6 @@
 /* Select */
-select,
-::picker(select) {
-  appearance: base-select;
-}
-
 select {
+  appearance: base-select;
   display: flex;
   align-items: center;
   background-color: ButtonFace;
@@ -47,6 +43,7 @@ select {
   }
 
   &::picker(select) {
+    appearance: base-select;
     transition: all 0.35s allow-discrete;
     padding-block: 0.5rem;
     border-radius: 0.375rem;

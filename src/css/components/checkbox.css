@@ -1,13 +1,17 @@
 /* Checkbox */
 input[type="checkbox"] {
-  --icon--content: "check_box_outline_blank" / "";
   appearance: none;
+  margin: 0;
 
-  &:checked {
-    --icon--content: "check_box" / "";
+  &::before {
+    content: "check_box_outline_blank" / "";
   }
 
-  &:indeterminate {
-    --icon--content: "indeterminate_check_box" / "";
+  &:checked::before {
+    content: "check_box" / "";
+  }
+
+  &:indeterminate:before {
+    content: "indeterminate_check_box" / "";
   }
 }

@@ -1,13 +1,10 @@
 /* Icon */
-icon,
-:where(input[type="checkbox"], input[type="radio"]),
-::picker-icon {
-  --icon--content: attr(name) / "";
-  font-family: "Material Symbols Rounded";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  line-height: 1;
+icon::before,
+input[type="checkbox"]::before,
+input[type="radio"]::before,
+select::picker-icon,
+option::checkmark {
+  font: normal normal 1.5rem / 1 "Material Symbols Rounded";
   letter-spacing: normal;
   text-transform: none;
   display: block;
@@ -22,17 +19,14 @@ icon,
     "wght" var(--icon--wght, 400),
     "GRAD" var(--icon--grad, 0),
     "opsz" var(--icon--opsz, 24);
+}
 
+icon {
   &::before {
-    content: var(--icon--content);
+    content: var(--icon--name, attr(name)) / "";
   }
 
   &[filled] {
     --icon--fill: 1;
   }
-}
-
-/* Toggle */
-button[aria-pressed="true"] > icon {
-  --icon--content: attr(pressed, attr(name));
 }

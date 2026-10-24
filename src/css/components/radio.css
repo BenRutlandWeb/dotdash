@@ -1,9 +1,13 @@
 /* Radio */
 input[type="radio"] {
-  --icon--content: "radio_button_unchecked" / "";
   appearance: none;
+  margin: 0;
 
-  &:checked {
-    --icon--content: "radio_button_checked" / "";
+  &::before {
+    content: "radio_button_unchecked" / "";
+  }
+
+  &:checked::before {
+    content: "radio_button_checked" / "";
   }
 }

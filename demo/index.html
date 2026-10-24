@@ -8,44 +8,79 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <title>Pen</title>
+    <title>DotDash</title>
   </head>
   <body>
-    <img src="https://i.pravatar.cc/40?u=avatar" alt="" is="avatar" />
-    <icon name="person" is="avatar"></icon>
-    <span is="avatar">BR</span>
+    <section>
+      <h2>Avatar</h2>
+      <div>
+        <img src="https://i.pravatar.cc/40?u=avatar" alt="" is="avatar" />
+        <icon name="person" is="avatar"></icon>
+        <span is="avatar">BR</span>
+      </div>
+    </section>
 
-    <icon name="menu"></icon>
-
-    <button aria-pressed="false">
-      <icon name="save" pressed="refresh"></icon>
-      Save
-    </button>
-
-    <button is="icon-button" aria-pressed="false">
-      <icon name="save" pressed="refresh"></icon>
-    </button>
+    <section>
+      <h2>Button</h2>
+      <div>
+        <button>Button</button>
+        <button>
+          <icon name="home"></icon>
+          Home
+        </button>
+      </div>
+    </section>
 
     <section>
       <h2>Checkbox</h2>
       <div>
-        <input type="checkbox" name="checkbox" value="eggs" aria-label="Eggs" />
-        <input type="checkbox" name="checkbox" value="milk" aria-label="Milk" />
-        <input
-          type="checkbox"
-          name="checkbox"
-          value="butter"
-          aria-label="Butter"
-        />
+        <fieldset>
+          <input
+            type="checkbox"
+            name="checkbox"
+            value="eggs"
+            aria-label="Eggs"
+          />
+          <input
+            type="checkbox"
+            name="checkbox"
+            value="milk"
+            aria-label="Milk"
+          />
+          <input
+            type="checkbox"
+            name="checkbox"
+            value="butter"
+            aria-label="Butter"
+          />
+        </fieldset>
+      </div>
+    </section>
+
+    <section>
+      <h2>IconButton</h2>
+      <div>
+        <button is="icon-button">
+          <icon name="menu"></icon>
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Icon</h2>
+      <div>
+        <icon name="person"></icon>
       </div>
     </section>
 
     <section>
       <h2>Radio</h2>
       <div>
-        <input type="radio" name="radio" value="eggs" aria-label="Eggs" />
-        <input type="radio" name="radio" value="milk" aria-label="Milk" />
-        <input type="radio" name="radio" value="butter" aria-label="Butter" />
+        <fieldset>
+          <input type="radio" name="radio" value="eggs" aria-label="Eggs" />
+          <input type="radio" name="radio" value="milk" aria-label="Milk" />
+          <input type="radio" name="radio" value="butter" aria-label="Butter" />
+        </fieldset>
       </div>
     </section>
 
@@ -72,6 +107,24 @@
       </div>
     </section>
 
+    <section>
+      <h2>Switch</h2>
+      <div>...</div>
+    </section>
+
+    <section>
+      <h2>Toggle</h2>
+      <div>
+        <button aria-pressed="false">
+          <icon name="save" pressed="refresh"></icon>
+          Save
+        </button>
+        <button is="icon-button" aria-pressed="false">
+          <icon name="favorite"></icon>
+        </button>
+      </div>
+    </section>
+
     <script>
       document.querySelectorAll("[aria-pressed]").forEach((button) => {
         button.addEventListener("click", () => {
@@ -82,6 +135,34 @@
         });
       });
     </script>
+
+    <style>
+      @layer demo {
+        body {
+          font:
+            400 1rem / 1.5 system-ui,
+            sans-serif;
+          margin: 0;
+        }
+        section {
+          display: grid;
+          gap: 0.5rem;
+          padding: 1rem;
+
+          & > h2 {
+            margin: 0;
+          }
+
+          & > div {
+            border: 1px dashed #ddd;
+            padding: 1rem;
+            display: grid;
+            justify-items: start;
+            gap: 0.5rem;
+          }
+        }
+      }
+    </style>
 
     <script src="../src/js/script.js"></script>
   </body>
