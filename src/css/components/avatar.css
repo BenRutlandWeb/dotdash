@@ -1,0 +1,11 @@
+/* Avatar */
+[is="avatar"] {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: Highlight;
+  color: HighlightText;
+  object-fit: cover;
+}
