@@ -1,4 +1,5 @@
 /* IconButton */
 [is="icon-button"] {
-  /**/
+  padding: 0.5rem;
+  border: 0;
 }

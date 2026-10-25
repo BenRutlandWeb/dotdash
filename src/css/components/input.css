@@ -6,6 +6,10 @@
   input[type="text"],
   input[type="url"]
 ) {
+  width: 100%;
+  height: calc(2.5rem + 2px);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid;
 }
 
 ::-webkit-inner-spin-button,

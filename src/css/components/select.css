@@ -3,11 +3,15 @@ select {
   appearance: base-select;
   display: flex;
   align-items: center;
-  background-color: ButtonFace;
-  color: ButtonText;
+  width: 100%;
+  height: calc(2.5rem + 2px);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid;
+  border-radius: 0;
+  background-color: white;
 
   &:focus-within {
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
   }
 
   &::picker-icon {
@@ -45,12 +49,7 @@ select {
   &::picker(select) {
     appearance: base-select;
     transition: all 0.35s allow-discrete;
-    padding-block: 0.5rem;
-    border-radius: 0.375rem;
-    border: 0;
-    background-color: ButtonFace;
-    color: ButtonText;
-    margin-block: 0.5rem;
+    border: 1px solid;
   }
 
   &:not(:open)::picker(select) {
