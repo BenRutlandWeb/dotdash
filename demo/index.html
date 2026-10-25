@@ -103,8 +103,36 @@
       <h2>Dialog</h2>
       <div>
         <button command="show-modal" commandfor="dialog">Open dialog</button>
+
         <dialog id="dialog">
-          <button command="close" commandfor="dialog">Close</button>
+          <button
+            type="button"
+            is="icon-button"
+            command="close"
+            commandfor="dialog"
+            aria-label="Close"
+          >
+            <icon name="close"></icon>
+          </button>
+        </dialog>
+      </div>
+    </section>
+
+    <section>
+      <h2>Drawer</h2>
+      <div>
+        <button command="show-popover" commandfor="drawer">Open drawer</button>
+
+        <aside is="drawer" id="drawer" popover>
+          <button
+            type="button"
+            is="icon-button"
+            command="close"
+            commandfor="drawer"
+            aria-label="Close"
+          >
+            <icon name="close"></icon>
+          </button>
         </dialog>
       </div>
     </section>
