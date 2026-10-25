@@ -1,3 +1,9 @@
+import { input, inputNumber, inputPassword } from "./components/input.js";
+
+input();
+inputNumber();
+inputPassword();
+
 const App = new (class {
   commands = new Map();
   constructor() {
@@ -36,22 +42,6 @@ App.registerCommand("--change-theme", ({ target, source }) => {
   source.setAttribute("aria-checked", String(!isChecked));
 });
 
-App.registerCommand("--toggle-visibility", ({ target, source }) => {
-  const isVisible = target.type === "text";
-
-  target.type = isVisible ? "password" : "text";
-  target.focus();
-
-  source.setAttribute("aria-pressed", String(!isVisible));
-});
-
-App.registerCommand("--clear-input", ({ target, source }) => {
-  target.value = "";
-  target.focus();
-
-  source.hidden = true;
-});
-
 App.registerCommand("--copy-to-clipboard", async ({ target, source }) => {
   const content =
     target.value !== undefined ? target.value : target.textContent;
@@ -63,26 +53,4 @@ App.registerCommand("--copy-to-clipboard", async ({ target, source }) => {
   setTimeout(() => {
     source.setAttribute("aria-pressed", false);
   }, 5000);
-});
-
-document.querySelectorAll('[command="--clear-input"]').forEach((invoker) => {
-  const search = invoker.commandForElement;
-
-  function setInvokerState(value) {
-    invoker.hidden = value;
-  }
-
-  setInvokerState(!search.value);
-
-  search.addEventListener("input", ({ target }) =>
-    setInvokerState(!target.value),
-  );
-});
-
-App.registerCommand("--step-down", ({ target }) => {
-  target.stepDown();
-});
-
-App.registerCommand("--step-up", ({ target }) => {
-  target.stepUp();
 });

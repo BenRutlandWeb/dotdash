@@ -1,3 +1,15 @@
 /* Input */
-:is(input[type="text"], input[type="url"]) {
+:is(
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="text"],
+  input[type="url"]
+) {
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button,
+::-webkit-search-cancel-button {
+  appearance: none;
 }

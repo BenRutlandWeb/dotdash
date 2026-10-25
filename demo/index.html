@@ -116,6 +116,40 @@
     </section>
 
     <section>
+      <h2>InputGroup</h2>
+      <div>
+        <fieldset is="input-group">
+          <button is="icon-button" command="--step-down" commandfor="number">
+            <icon name="remove"></icon>
+          </button>
+          <input type="number" id="number" min="0" max="100" step="5" />
+          <button is="icon-button" command="--step-up" commandfor="number">
+            <icon name="add"></icon>
+          </button>
+        </fieldset>
+
+        <fieldset is="input-group">
+          <input type="search" id="search" />
+          <button is="icon-button" command="--clear-input" commandfor="search">
+            <icon name="close"></icon>
+          </button>
+        </fieldset>
+
+        <fieldset is="input-group">
+          <input type="password" id="password" />
+          <button
+            is="icon-button"
+            aria-pressed="false"
+            command="--toggle-visibility"
+            commandfor="password"
+          >
+            <icon name="visibility" pressed="visibility_off"></icon>
+          </button>
+        </fieldset>
+      </div>
+    </section>
+
+    <section>
       <h2>Radio</h2>
       <div>
         <fieldset>
@@ -219,6 +253,6 @@
       }
     </style>
 
-    <script src="../src/js/script.js"></script>
+    <script src="../src/js/script.js" type="module"></script>
   </body>
 </html>
