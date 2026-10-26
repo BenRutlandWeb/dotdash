@@ -36,7 +36,7 @@ function input() {
 
 function inputPassword() {
   document.querySelectorAll('input[type="password"]').forEach((number) => {
-    number.addEventListener("command", ({ command, target }) => {
+    number.addEventListener("command", ({ command, target, source }) => {
       if (command === "--toggle-visibility") {
         const isVisible = target.type === "text";
 
