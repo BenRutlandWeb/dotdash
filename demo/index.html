@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <title>DotDash</title>
+    <title>All Components / DotDash</title>
   </head>
   <body>
     <section>
@@ -195,6 +195,20 @@
     </section>
 
     <section>
+      <h2>Meter</h2>
+      <div>
+        <meter
+          value="75"
+          min="0"
+          max="100"
+          low="10"
+          high="90"
+          optimum="50"
+        ></meter>
+      </div>
+    </section>
+
+    <section>
       <h2>Radio</h2>
       <div>
         <fieldset>
@@ -249,11 +263,21 @@
       <h2>Toggle</h2>
       <div>
         <button aria-pressed="false">
-          <icon name="save" pressed="refresh"></icon>
+          <icon name="bookmark"></icon>
           Save
         </button>
+
+        <button aria-pressed="false">
+          <icon name="videocam_off" pressed="videocam"></icon>
+          Camera
+        </button>
+
         <button is="icon-button" aria-pressed="false">
           <icon name="favorite"></icon>
+        </button>
+
+        <button is="icon-button" aria-pressed="false">
+          <icon name="visibility" pressed="visibility_off"></icon>
         </button>
       </div>
     </section>

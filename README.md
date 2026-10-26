@@ -11,3 +11,22 @@ Application and dashboard UI library.
 
 1. keeping a11y and semantics whilst keeping boilerplate/element nesting to a minimum.
 2. interactive elements such as buttons can have multiple uses, using an attribute rather than seperate custom-elements or wrapper elements is much better.
+
+## Todo
+
+- ToolBar
+- AppBar
+- MenuBar
+- DropdownMenu
+- Badge
+- Chip
+- Slider
+- Progress
+- Meter
+- Carousel
+- NavigationRail
+- NavigationBar
+- SplitButton
+- ButtonGroup
+- FAB
+- FABMenu

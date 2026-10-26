@@ -1,7 +1,12 @@
 /* Toggle */
 button[aria-pressed] {
-  &[aria-pressed="true"] > icon {
-    --icon--name: attr(pressed, attr(name));
-    --icon--fill: 1;
+  &[aria-pressed="true"] {
+    &:not(:has([pressed])) {
+      --icon--fill: 1;
+    }
+
+    &:has([pressed]) icon {
+      --icon--name: attr(pressed, attr(name));
+    }
   }
 }

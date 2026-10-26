@@ -1,0 +1,88 @@
+/* Meter */
+meter {
+  appearance: none;
+  height: 0.5rem;
+  width: 100%;
+  border-radius: 0.25rem;
+
+  /* Attribute fallbacks */
+  --min: attr(min type(<number>), 0);
+  --max: attr(max type(<number>), 100);
+  --value: attr(value type(<number>), 0);
+  --low: attr(low type(<number>), var(--min));
+  --high: attr(high type(<number>), var(--max));
+  --optimum: attr(optimum type(<number>), var(--min));
+
+  /* Fill width percentage */
+  --pct: calc(((var(--value) - var(--min)) / (var(--max) - var(--min))) * 100%);
+
+  /* --- Boolean Math Evaluators (Output: 1 for true, 0 for false) --- */
+
+  /* Equality: is_opt = (value == optimum) */
+  --is-opt: calc(1 - clamp(0, abs(var(--value) - var(--optimum)), 1));
+
+  /* Strict Inequalities */
+  --is-gt-low: clamp(0, sign(var(--value) - var(--low)), 1); /* value > low */
+  --is-lt-high: clamp(
+    0,
+    sign(var(--high) - var(--value)),
+    1
+  ); /* value < high */
+  --is-lt-low: clamp(0, sign(var(--low) - var(--value)), 1); /* value < low */
+  --is-gt-high: clamp(
+    0,
+    sign(var(--value) - var(--high)),
+    1
+  ); /* value > high */
+  --is-gt-min: clamp(0, sign(var(--value) - var(--min)), 1); /* value > min */
+  --is-lt-max: clamp(0, sign(var(--max) - var(--value)), 1); /* value < max */
+
+  /* --- Target Conditions --- */
+
+  /* Condition 1: Green if value == optimum */
+  --cond-green: var(--is-opt);
+
+  /* Condition 2: Orange if value > low && value < high && value != optimum */
+  --cond-orange: calc(
+    var(--is-gt-low) * var(--is-lt-high) * (1 - var(--is-opt))
+  );
+
+  /* Condition 3: Red if (value > min && value < low) || (value > high && value < max) */
+  --cond-red: clamp(
+    0,
+    (var(--is-gt-min) * var(--is-lt-low)) +
+      (var(--is-gt-high) * var(--is-lt-max)),
+    1
+  );
+
+  /* Palette */
+  --c-green: #10b981;
+  --c-orange: #f59e0b;
+  --c-red: #ef4444;
+  --c-default: #6b7280; /* Neutral fallback if boundary edges (e.g. value == low) aren't caught */
+
+  /* Discrete Color Multiplexer (No blending) */
+  --fill-color: color-mix(
+    in srgb,
+    color-mix(
+      in srgb,
+      color-mix(
+        in srgb,
+        var(--c-default),
+        var(--c-red) calc(var(--cond-red) * 100%)
+      ),
+      var(--c-orange) calc(var(--cond-orange) * 100%)
+    ),
+    var(--c-green) calc(var(--cond-green) * 100%)
+  );
+
+  background: linear-gradient(
+    90deg,
+    var(--fill-color) 0 var(--pct),
+    ButtonFace 0 100%
+  );
+
+  &::-webkit-meter-bar {
+    display: none;
+  }
+}
