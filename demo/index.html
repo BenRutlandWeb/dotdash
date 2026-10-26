@@ -127,7 +127,7 @@
           <button
             type="button"
             is="icon-button"
-            command="close"
+            command="hide-popover"
             commandfor="drawer"
             aria-label="Close"
           >
@@ -255,6 +255,16 @@
         <button is="icon-button" aria-pressed="false">
           <icon name="favorite"></icon>
         </button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tooltip</h2>
+      <div>
+        <a href="#" is="icon-button" interestfor="tooltip">
+          <icon name="info"></icon>
+        </a>
+        <div id="tooltip" is="tooltip" popover>This is a tooltip</div>
       </div>
     </section>
 

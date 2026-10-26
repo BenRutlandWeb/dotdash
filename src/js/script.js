@@ -4,6 +4,7 @@ input();
 inputNumber();
 inputPassword();
 
+/*
 const App = new (class {
   commands = new Map();
   constructor() {
@@ -19,7 +20,6 @@ const App = new (class {
       { capture: true },
     );
 
-    /* Assign the root element to any invokers without a target */
     document
       .querySelectorAll("[command]:not([commandfor])")
       .forEach((invoker) => {
@@ -54,3 +54,4 @@ App.registerCommand("--copy-to-clipboard", async ({ target, source }) => {
     source.setAttribute("aria-pressed", false);
   }, 5000);
 });
+*/

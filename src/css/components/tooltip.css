@@ -1,0 +1,9 @@
+/* Tooltip */
+[is="tooltip"] {
+  position-anchor: auto;
+  position-try-fallbacks:
+    flip-inline,
+    flip-block,
+    flip-inline flip-block;
+  inset: anchor(center) auto anchor(center) anchor(end);
+}
